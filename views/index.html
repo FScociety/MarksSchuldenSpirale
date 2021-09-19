@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> € Marks Zinsen Spirale € </title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video autoplay loop muted>
+        <source type="video/mp4" src="/render.mp4">
+    </video>
+    <div class="textContainer">
+        <div id="Geld">waiting for server..</div>
+        <div id="ZinsenDisplay">+ 0.05€/sek</div>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect();
+            socket.on("money", function(data) {
+                document.getElementById("Geld").textContent = Math.round(data.money*10000)/10000 + "€";
+            })
+
+            socket.on("zins", function(data) {
+                document.getElementById("ZinsenDisplay").textContent = "+" + Math.round(data.zins*1000000)/1000000 + "€/sek";
+            })
+          </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+body { 
+    background-color: black;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+video {
+    display: block;
+    margin: auto;
+    height: 101vh;
+    filter: blur(0px);
+}
+
+.textContainer {
+    line-height: 0px;
+    text-align: center;
+    color:white;
+    position:absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 0px;
+}
+
+#Geld {
+    font-size: 150px;
+    line-height: 180px;
+}
+
+#ZinsenDisplay {
+    font-size: 25px;
+}
+
+#Schulden {
+    font-size: 100px;
+    line-height: 200px;
+}
